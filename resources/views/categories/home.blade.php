@@ -32,7 +32,7 @@
                             <td class="limit-text">{{ $category->description }}</td>
                             
                             <td>
-                       `z         <a href="{{ route('categories.create') }}" class="btn btn-primary btn sm">View</a>
+                       `        <a href="{{ route('categories.create') }}" class="btn btn-primary btn sm">View</a>
                                 <a href="{{ route('categories.edit',$category->id) }}" class="btn btn-primary btn sm">Edit</a>
                                 
                                 <form action="{{ route('categories.delete', $category->id) }}" method="POST" class="d-inline">
