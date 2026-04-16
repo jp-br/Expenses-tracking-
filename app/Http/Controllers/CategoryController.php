@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Expense;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -45,7 +46,6 @@ class CategoryController extends Controller
       $category = Category::findOrFail($id);
       $category->update($validated);
       return redirect()->route('categories.home')->with('success', 'Post Updated successfully!');
-
    }
 
    public function delete($id){
@@ -55,4 +55,15 @@ class CategoryController extends Controller
       return redirect()->route('categories.home')->with('success', 'Post Deleted successfully!');
    }
 
+   
+
+   public function homeExpenses($id)
+   {
+      $category = Category::findOrFail($id);
+      $expense = Expense::where('category_id', $id)->latest()->get();
+      
+      
+      return view('categories.homeExpense', compact('expense','category'));
+
+   }
 }

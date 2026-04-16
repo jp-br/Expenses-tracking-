@@ -21,7 +21,7 @@
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Actions</th> </tr>
+                        <th scope="col">Actions</th>
                     </tr>   
                 </thead>
                 
@@ -32,7 +32,7 @@
                             <td class="limit-text">{{ $category->description }}</td>
                             
                             <td>
-                       `        <a href="{{ route('categories.create') }}" class="btn btn-primary btn sm">View</a>
+                                <a href="{{ route('expenses.homeExpenses', $category->id) }}" class="btn btn-primary btn sm">See Expenses</a>
                                 <a href="{{ route('categories.edit',$category->id) }}" class="btn btn-primary btn sm">Edit</a>
                                 
                                 <form action="{{ route('categories.delete', $category->id) }}" method="POST" class="d-inline">
@@ -51,12 +51,10 @@
     </div>
 </div>
 
-
-
-    <!-- @foreach ($categories as $category)
+    {{-- <!-- @foreach ($categories as $category)
     
      @endforeach
-     -->
+     --> --}}
    
     
 @endsection

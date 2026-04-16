@@ -10,4 +10,8 @@ class Category extends Model
         'name',
         'description',
     ];
+
+    public function expenses(){
+        return $this->belongsTo(Expense::class);
+    }
 }

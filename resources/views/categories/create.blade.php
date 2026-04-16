@@ -2,7 +2,6 @@
 @section('content')
 
 
-
     <form action="{{ route('categories.store') }}" method="POST" class="card p-4 shadow-sm">
         @csrf
        <div class="mb-3">
@@ -20,4 +19,5 @@
         </div>
 
     </form>   
+    
 @endsection
